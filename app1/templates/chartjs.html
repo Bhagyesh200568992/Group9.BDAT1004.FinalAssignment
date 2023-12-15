@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+<div class="container">
+<div>
+  <canvas id="myChart"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+  const ctx = document.getElementById('myChart');
+
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: [{% for t in time %} '{{t}}', {% endfor %}],
+      datasets: [{
+        label: '{{title}}',
+        borderWidth: 3,
+        borderColor: '{{color}}',
+        data: [{% for p in price %} {{p}}, {% endfor %}],
+        borderWidth: 1
+      }]
+    },
+  });
+</script>
+
+</div>
+</body>
+</html>

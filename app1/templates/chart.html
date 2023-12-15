@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+<div class="container">
+<div>
+  <canvas id="myChart"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+  const ctx = document.getElementById('myChart');
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['BTC','ETH','MATIC'],
+      datasets: [{
+       borderWidth: 3,
+        backgroundColor: [
+          'rgb(255, 102, 102, 1)',
+          'rgb(0, 163, 254, 1)',
+          'rgb(21, 72, 29, 1)'],
+            data: [{{t1}}, {{t2}},{{t3}}],
+        borderWidth: 1
+      }]
+    },
+  });
+</script>
+
+</div>
+</body>
+</html>
